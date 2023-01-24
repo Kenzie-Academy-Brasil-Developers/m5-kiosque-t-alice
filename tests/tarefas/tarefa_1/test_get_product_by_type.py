@@ -1,6 +1,6 @@
 import unittest
 
-from management.product_handler import get_products_by_type
+from management.product_handler import get_product_by_type
 
 
 class TestGetProductByType(unittest.TestCase):
@@ -14,7 +14,7 @@ class TestGetProductByType(unittest.TestCase):
         Testa se a função `get_product_by_type` retorna 
         os produtos de determinado tipo corretamente.
         """
-        result = get_products_by_type("drink")
+        result = get_product_by_type("drink")
         expected = [
             {
                 "_id": 32,
@@ -45,7 +45,7 @@ class TestGetProductByType(unittest.TestCase):
         Testa se a função `get_product_by_type` retorna 
         uma lista vazia caso não exista nenhum produto do tipo.
         """
-        result = get_products_by_type("non_existing_type_10000")
+        result = get_product_by_type("non_existing_type_10000")
         expected = []
 
         msg = self.base_msg % "retornando uma lista"
