@@ -1,6 +1,6 @@
 import unittest
 
-from management.product_handler import get_product_by_id, get_products_by_type
+from management.product_handler import get_product_by_id, get_product_by_type
 
 class TestGetProductByTypeRaiseError(unittest.TestCase):
     @classmethod
@@ -17,7 +17,7 @@ class TestGetProductByTypeRaiseError(unittest.TestCase):
             "levantando um `TypeError` caso o parâmetro passado não seja uma string",
         )
         with self.assertRaises(TypeError, msg=msg) as err:
-            get_products_by_type([1, 2, 3])
+            get_product_by_type([1, 2, 3])
 
         msg = self.base_msg % ("retornando a mensagem apropriada com o TypeError",)
         self.assertEqual(*err.exception.args, "product type must be a str", msg=msg)
