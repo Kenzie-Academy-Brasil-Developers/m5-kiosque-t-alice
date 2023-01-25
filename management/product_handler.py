@@ -41,23 +41,23 @@ def add_product(my_menu: list, **new_product: dict[str, any]):
 def menu_report():
     product_count = len(products)
     my_total = 0.00
-    my_list = {}
+    my_list_one = {}
     my_count = 0
 
     for item in products:
         actual_type = item["type"]
-        exist_type = my_list.get(actual_type)
+        exist_type = my_list_one.get(actual_type)
 
         if exist_type is None:
-            my_list.update({actual_type: 1})
+            my_list_one.update({actual_type: 1})
         else:
-            my_list[actual_type] += 1
+            my_list_one[actual_type] += 1
 
         my_count += 1
         my_total += item["price"]
-        my_list
+        my_list_one
 
-    my_list_two = list(my_list)
+    my_list_two = list(my_list_one)
     types_values = my_list_two[0]
     avarage_price = my_total / my_count
 
